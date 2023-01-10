@@ -1,3 +1,9 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins&display=swap");
+
+* {
+  font-family: "Poppins", sans-serif;
+}
+
 body {
   background-color: #101019;
   color: azure;
@@ -5,9 +11,10 @@ body {
 
 button {
   border-radius: 5px;
-  background-color: #2B2A33;
+  background-color: #2b2a33;
   border: none;
   transition: 0.1s;
+  color: azure;
 }
 
 button:hover {
@@ -15,9 +22,19 @@ button:hover {
 }
 
 input#channel {
-  background-color: #2B2A33;
+  background-color: #2b2a33;
   color: azure;
   border: none;
   text-align: center;
   border-radius: 5px;
+}
+
+.container {
+  background-color: #191926;
+  padding: 10px;
+  margin-top: 10px;
+}
+
+.trigger {
+  color: #6791fc;
 }

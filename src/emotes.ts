@@ -1,4 +1,5 @@
 export const emotes = {
-  laugh: ["OMEGALUL"],
+  laugh: ["OMEGALUL", "KEKW"],
+  gasp: ["D:"],
   clap: ["Clap"],
 };

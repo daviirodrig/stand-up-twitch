@@ -1,0 +1,23 @@
+body {
+  background-color: #101019;
+  color: azure;
+}
+
+button {
+  border-radius: 5px;
+  background-color: #2B2A33;
+  border: none;
+  transition: 0.1s;
+}
+
+button:hover {
+  background-color: darkviolet;
+}
+
+input#channel {
+  background-color: #2B2A33;
+  color: azure;
+  border: none;
+  text-align: center;
+  border-radius: 5px;
+}

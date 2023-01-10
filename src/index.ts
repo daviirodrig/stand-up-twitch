@@ -6,5 +6,7 @@ async function connectHandler(channel: string) {
 
 document.querySelector("#connect").addEventListener("click", (e) => {
   const channel_element: HTMLInputElement = document.querySelector("#channel");
-  connectHandler(channel_element.value);
+  if (channel_element.value !== "") {
+    connectHandler(channel_element.value);
+  }
 });

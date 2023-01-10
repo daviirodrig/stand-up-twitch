@@ -1,4 +1,4 @@
-import tmi = require("tmi.js");
+import * as tmi from "tmi.js";
 import { emotes } from "./emotes";
 
 export const client = new tmi.Client({});

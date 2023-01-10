@@ -1,4 +1,5 @@
 import { client } from "./chat";
+import "./main.css"
 
 async function connectHandler(channel: string) {
   await client.join(channel);

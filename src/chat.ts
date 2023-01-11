@@ -3,6 +3,8 @@ import { emotes } from "./emotes";
 
 export const client = new tmi.Client({});
 
+let now_playing = [];
+
 client.connect();
 
 function getRandomInt(max: number) {
@@ -21,16 +23,31 @@ client.on("connected", () => {
 client.on("message", async (channel, tags, message, self) => {
   for (const emote of emotes) {
     if (emote.text.some((v: string) => message.includes(v))) {
+      if (now_playing.filter((x) => x.type === emote.action.type).length >= 5) {
+        return;
+      }
+
       const file = `https://cdn.davi.gq/${emote.action.type}${getRandomInt(
         emote.action.range
       )}.mp3`;
       const volumeElement: HTMLInputElement = document.querySelector("#volume");
       const audio = new Audio(file);
       audio.volume = Number(volumeElement.value) / 100;
-      audio.oncanplay = async () => {
-        await audio.play();
+
+      audio.oncanplay = async (e) => {
+        const target = e.target as HTMLAudioElement;
+        await target.play();
+        const info = {
+          type: emote.action.type,
+          audio: target,
+        };
+        now_playing.push(info);
       };
-      //await audio.play();
+
+      audio.onended = (e) => {
+        const target = e.target as HTMLAudioElement;
+        now_playing = now_playing.filter((i) => i.audio !== target);
+      };
     }
   }
 });

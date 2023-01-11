@@ -29,6 +29,14 @@ input#channel {
   border-radius: 5px;
 }
 
+label {
+  text-align: center;
+}
+
+input#volume {
+  width: 100%;
+}
+
 .container {
   background-color: #191926;
   padding: 10px;
@@ -37,4 +45,16 @@ input#channel {
 
 .trigger {
   color: #6791fc;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+}
+
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }

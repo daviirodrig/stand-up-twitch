@@ -5,25 +5,32 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StandUP TTV</title>
+    <title>Stand Up Twitch</title>
 </head>
 
 <body>
-    <input type="text" id="channel" placeholder="Channel Name">
-    <button id="connect" disabled>Connect</button>
-    <label for="volume">
-        Volume
-        <input type="range" id="volume">
-    </label>
-    <div id="status"></div>
-    <div class="container">
-        Laugh triggers: <span class="trigger">OMEGALUL, KEKW</span>
-        <br>
-        Gasp triggers: <span class="trigger">D:</span>
-        <br>
-        Clap triggers: <span class="trigger">Clap</span>
-    </div>
-    <script src="bundle.js"></script>
+    <main>
+        <div>
+            <span class="title">Stand Up Twitch</span>
+            <br>
+            <input type="text" id="channel" placeholder="Channel Name">
+            <button id="connect" disabled>Connect</button>
+            <div>
+                <label for="volume">
+                    Volume
+                    <input type="range" id="volume">
+                </label>
+            </div>
+            <div id="status"></div>
+            <div class="container">
+                Laugh triggers: <span class="trigger">OMEGALUL, KEKW</span>
+                <br>
+                Gasp triggers: <span class="trigger">D:</span>
+                <br>
+                Clap triggers: <span class="trigger">Clap</span>
+            </div>
+        </div>
+    </main>
 </body>
 
 </html>

@@ -10,7 +10,7 @@ function getRandomInt(max: number) {
 }
 
 client.on("join", () => {
-  document.querySelector("#status").innerHTML = "Connected!"
+  document.querySelector("#status").innerHTML = "Connected!";
 });
 
 client.on("connected", () => {
@@ -21,11 +21,16 @@ client.on("connected", () => {
 client.on("message", async (channel, tags, message, self) => {
   for (const emote of emotes) {
     if (emote.text.some((v: string) => message.includes(v))) {
-      const file = `https://cdn.davi.gq/${emote.action.type}${getRandomInt(emote.action.range)}.mp3`;
+      const file = `https://cdn.davi.gq/${emote.action.type}${getRandomInt(
+        emote.action.range
+      )}.mp3`;
       const volumeElement: HTMLInputElement = document.querySelector("#volume");
       const audio = new Audio(file);
       audio.volume = Number(volumeElement.value) / 100;
-      await audio.play();
+      audio.oncanplay = async () => {
+        await audio.play();
+      };
+      //await audio.play();
     }
   }
 });

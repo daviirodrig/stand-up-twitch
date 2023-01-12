@@ -23,7 +23,11 @@ client.on("connected", () => {
 client.on("message", async (channel, tags, message, self) => {
   for (const emote of emotes) {
     if (emote.text.some((v: string) => message.includes(v))) {
-      if (now_playing.filter((x) => x.type === emote.action.type).length >= 5) {
+      console.log(now_playing)
+      if (
+        now_playing.filter((x) => x.type === emote.action.type).length >=
+        emote.action.limit
+      ) {
         return;
       }
 

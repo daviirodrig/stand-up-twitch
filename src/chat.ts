@@ -31,7 +31,7 @@ client.on("message", async (channel, tags, message, self) => {
         return;
       }
 
-      const file = `https://cdn.davi.gq/${emote.action.type}${getRandomInt(
+      const file = `https://cdn.justdavi.dev/${emote.action.type}${getRandomInt(
         emote.action.range
       )}.mp3`;
       const volumeElement: HTMLInputElement = document.querySelector("#volume");

@@ -9,6 +9,24 @@ body {
   color: azure;
 }
 
+main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  font-size: larger;
+  margin-bottom: 15px;
+}
+
+/* Legacy class for backward compatibility */
+.trigger {
+  color: #6791fc;
+}
+
 button {
   border-radius: 5px;
   background-color: #2b2a33;
@@ -39,22 +57,148 @@ input#volume {
 
 .container {
   background-color: #191926;
-  padding: 10px;
-  margin-top: 10px;
+  padding: 16px;
+  margin-top: 15px;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.trigger {
-  color: #6791fc;
+.container h2 {
+  margin-top: 0;
+  margin-bottom: 16px;
+  text-align: center;
+  font-size: 1.4rem;
 }
 
-.title {
+.trigger-section {
   display: flex;
-  justify-content: center;
-  font-size: larger;
+  align-items: center;
+  margin-bottom: 15px;
+  flex-wrap: wrap;
 }
 
-main {
+.trigger-label {
+  min-width: 60px;
+  font-weight: bold;
+  margin-right: 10px;
+}
+
+.trigger-pills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  flex: 1;
+  min-height: 36px;
+  align-items: center;
+}
+
+.trigger-pill {
+  background-color: #2b2a33;
+  border-radius: 18px;
+  padding: 6px 12px;
+  display: flex;
+  align-items: center;
+  color: azure;
+  transition: background-color 0.2s;
+}
+
+.trigger-pill:hover {
+  background-color: #3d3c47;
+}
+
+.trigger-pill-text {
+  margin-right: 8px;
+}
+
+.remove-trigger {
+  background-color: transparent;
+  border: none;
+  color: #ff6b6b;
+  width: 20px;
+  height: 20px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  border-radius: 50%;
+  transition: background-color 0.2s;
+}
+
+.remove-trigger:hover {
+  background-color: rgba(255, 107, 107, 0.2);
+}
+
+.add-trigger-btn {
+  background-color: #2b2a33;
+  border: none;
+  color: #50fa7b;
+  width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  font-size: 18px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 10px;
+  transition: background-color 0.2s;
+}
+
+.add-trigger-btn:hover {
+  background-color: #3d3c47;
+}
+
+#new-trigger-container {
+  display: flex;
+  gap: 8px;
+  margin: 15px 0;
+  padding: 10px;
+  background-color: #2b2a33;
+  border-radius: 10px;
+}
+
+#new-trigger-container.hidden {
+  display: none;
+}
+
+#new-trigger-input {
+  flex: 1;
+  background-color: #3d3c47;
+  border: none;
+  color: azure;
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+#new-trigger-container button {
+  padding: 8px 12px;
+  border-radius: 5px;
+}
+
+#save-new-trigger {
+  background-color: #50fa7b;
+  color: #191926;
+}
+
+#save-new-trigger:hover {
+  background-color: #43d668;
+}
+
+#cancel-new-trigger {
+  background-color: #ff6b6b;
+  color: #191926;
+}
+
+#cancel-new-trigger:hover {
+  background-color: #e05a5a;
+}
+
+#save-status {
+  margin-top: 10px;
+  color: #50fa7b;
+  text-align: center;
+  height: 1.2em;
+  font-weight: bold;
 }

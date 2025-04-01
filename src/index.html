@@ -18,19 +18,37 @@
             <div>
                 <label for="volume">
                     Volume
-                    <input type="range" id="volume">
+                    <input type="range" id="volume" value="50">
                 </label>
             </div>
             <div id="status"></div>
             <div class="container">
-                Laugh triggers: <span class="trigger">OMEGALUL, KEKW</span>
-                <br>
-                Gasp triggers: <span class="trigger">D:</span>
-                <br>
-                Clap triggers: <span class="trigger">Clap</span>
+                <h2>Configure Triggers</h2>
+                <div class="trigger-section">
+                    <label class="trigger-label">Laugh:</label>
+                    <div class="trigger-pills" id="laugh-pills"></div>
+                    <button class="add-trigger-btn" data-type="laugh">+</button>
+                </div>
+                <div class="trigger-section">
+                    <label class="trigger-label">Gasp:</label>
+                    <div class="trigger-pills" id="gasp-pills"></div>
+                    <button class="add-trigger-btn" data-type="gasp">+</button>
+                </div>
+                <div class="trigger-section">
+                    <label class="trigger-label">Clap:</label>
+                    <div class="trigger-pills" id="clap-pills"></div>
+                    <button class="add-trigger-btn" data-type="clap">+</button>
+                </div>
+                <div id="new-trigger-container" class="hidden">
+                    <input type="text" id="new-trigger-input" placeholder="Type new trigger">
+                    <button id="save-new-trigger">Add</button>
+                    <button id="cancel-new-trigger">Cancel</button>
+                </div>
+                <div id="save-status"></div>
             </div>
         </div>
     </main>
+    <script type="module" src="./index.ts"></script>
 </body>
 
 </html>

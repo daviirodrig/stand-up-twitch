@@ -27,7 +27,7 @@ jobs:
 
       - name: Build
         run: |
-          pnpm ci
+          pnpm install
           pnpm webpack
 
       - name: Upload artifacts
